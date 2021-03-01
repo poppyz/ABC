@@ -23,25 +23,16 @@ public class Main {
     public static <T extends Comparable> T[] insertionSort(T[] array)
     {
         T [] result = array.clone();
+        T temp;
         for (int i = 1; i < result.length; i++)
         {
-            T temp;
-            for (int j = 0; j < i; j++)
+            temp = result[i];
+            int j = i;
+            for (; j > 0 && (temp.compareTo(result[j - 1]) < 0); j--)
             {
-                if (result[i].compareTo(result[j]) >= 0)
-                {
-
-                }
-                else
-                {
-                    for (int t = i; t> j; t--)
-                    {
-                        temp = result[t];
-                        result[t] = result[t-1];
-                        result[t-1] = temp;
-                    }
-                }
+                result[j] = result[j-1];
             }
+            result[j] = temp;
         }
         return  result;
     }
