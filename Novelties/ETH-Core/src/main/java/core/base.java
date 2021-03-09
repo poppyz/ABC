@@ -64,7 +64,7 @@ class Base
     private static final Logger log = LoggerFactory.getLogger(Base.class);
     public static void main(String[] args) throws Exception {
         WebSocketService ws = new WebSocketService("http://18.182.107.97:8546", false);
-        Base test = new Base(ws,"mongodb://admin:7400ZXR.@18.182.107.97:27017/admin");
+        Base test = new Base(ws,"mongodb://admin:*******@18.182.107.97:27017/admin");
         test.credentials = test.get_wallet_from_db(5,"123456");
         System.out.println(test.get_balance(test.rich).getBalance());
         test.Give(test.credentials, 1000000);
